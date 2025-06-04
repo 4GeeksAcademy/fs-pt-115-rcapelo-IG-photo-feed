@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Clone - Proyecto Bootstrap</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-2">
+      <div class="container">
+        <a class="navbar-brand fs-4 fw-bold text-dark" href="#">
+          <i class="fab fa-instagram me-2"></i>Instagram
+        </a>
+        <div class="d-flex gap-2">
+          <button
+            class="btn btn-primary fw-semibold px-3"
+            data-bs-toggle="modal"
+            data-bs-target="#createPostModal"
+          >
+            Create a new post
+          </button>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fas fa-cog"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accessibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPALN -->
+
+    <div class="container" style="max-width: 935px">
+      <div class="my-5 px-3">
+        <div class="d-flex justify-content-center mb-4 gap-2">
+          <button class="btn btn-primary view-btn active" id="gridView">
+            <i class="fas fa-th"></i>
+          </button>
+          <button class="btn btn-outline-secondary view-btn" id="listView">
+            <i class="fas fa-square"></i>
+          </button>
+        </div>
+
+        <!-- VISTA DE CUADRÍCULA -->
+        <div id="gridContent">
+          <div class="photo-grid">
+            <div
+              class="photo-item"
+              data-bs-toggle="modal"
+              data-bs-target="#postModal"
+              data-post="0"
+            >
+              <img
+                src="src/img/img1.jpg"
+                alt="Goku - El guerrero Saiyan más poderoso"
+              />
+            </div>
+            <div class="photo-item">
+              <img
+                src="src/img/img2.jpg"
+                alt="Gohan - El hijo prodigio de Goku"
+              />
+            </div>
+            <div class="photo-item">
+              <img
+                src="src/img/img3.jpg"
+                alt="Vegeta - El príncipe de los Saiyans"
+              />
+            </div>
+            <div class="photo-item">
+              <img
+                src="src/img/img4.jpg"
+                alt="Trunks - El joven guerrero del futuro"
+              />
+            </div>
+            <div class="photo-item">
+              <img
+                src="src/img/img5.jpg"
+                alt="Milk - La esposa guerrera de Goku"
+              />
+            </div>
+            <div class="photo-item">
+              <img
+                src="src/img/img6.jpg"
+                alt="Bulma - La genio científica de Capsule Corp"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- VISTA DE LISTA -->
+
+        <div id="listContent" style="display: none;">
+            
+            <!-- Goku -->
+            <div class="card border-1 mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 class="fw-semibold mb-0 text-dark">¡El poder de Goku!</h5>
+                    <small class="text-muted">08/26</small>
+                </div>
+                <img src="src/img/img1.jpg" alt="Goku - El guerrero Saiyan más poderoso" class="card-img-top">
+                <div class="card-body p-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-heart fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-comment fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-paper-plane fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="fw-semibold mb-2 text-dark">1,247 Likes</div>
+                    <div class="text-dark">Goku entrenando para alcanzar nuevos niveles de poder. ¡Un verdadero guerrero Saiyan! #DragonBall #Goku #Saiyan</div>
+                </div>
+            </div>
+
+            <!-- Gohan -->
+            <div class="card border-1 mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 class="fw-semibold mb-0 text-dark">Gohan en acción</h5>
+                    <small class="text-muted">08/25</small>
+                </div>
+                <img src="src/img/img2.jpg" alt="Gohan - El hijo prodigio de Goku" class="card-img-top">
+                <div class="card-body p-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-heart fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-comment fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-paper-plane fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="fw-semibold mb-2 text-dark">892 Likes</div>
+                    <div class="text-dark">El hijo prodigio demuestra su increíble potencial. ¡El futuro está en buenas manos! #Gohan #Prodigio #DragonBall</div>
+                </div>
+            </div>
+
+            <!-- Vegeta -->
+            <div class="card border-1 mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 class="fw-semibold mb-0 text-dark">El Príncipe Vegeta</h5>
+                    <small class="text-muted">08/24</small>
+                </div>
+                <img src="src/img/img3.jpg" alt="Vegeta - El príncipe de los Saiyans" class="card-img-top">
+                <div class="card-body p-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-heart fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-comment fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-paper-plane fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="fw-semibold mb-2 text-dark">1,845 Likes</div>
+                    <div class="text-dark">El orgullo Saiyan en su máxima expresión. ¡Nadie supera al Príncipe! #Vegeta #PrincipeSaiyan #Orgullo</div>
+                </div>
+            </div>
+
+            <!-- Trunks -->
+            <div class="card border-1 mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 class="fw-semibold mb-0 text-dark">Trunks del Futuro</h5>
+                    <small class="text-muted">08/23</small>
+                </div>
+                <img src="src/img/img4.jpg" alt="Trunks - El joven guerrero del futuro" class="card-img-top">
+                <div class="card-body p-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-heart fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-comment fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-paper-plane fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="fw-semibold mb-2 text-dark">756 Likes</div>
+                    <div class="text-dark">El guerrero que vino del futuro para salvar el mundo. ¡Esperanza y valentía! #Trunks #Futuro #Esperanza</div>
+                </div>
+            </div>
+
+            <!-- Milk -->
+            <div class="card border-1 mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 class="fw-semibold mb-0 text-dark">Milk la Guerrera</h5>
+                    <small class="text-muted">08/22</small>
+                </div>
+                <img src="src/img/img5.jpg" alt="Milk - La esposa guerrera de Goku" class="card-img-top">
+                <div class="card-body p-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-heart fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-comment fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-paper-plane fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="fw-semibold mb-2 text-dark">623 Likes</div>
+                    <div class="text-dark">La mujer más fuerte del universo (¡pregúntenle a Goku!). Madre, esposa y guerrera. #Milk #Familia #Fuerza</div>
+                </div>
+            </div>
+
+            <!-- Bulma -->
+            <div class="card border-1 mb-4">
+                <div class="card-header bg-white d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h5 class="fw-semibold mb-0 text-dark">Bulma Genius</h5>
+                    <small class="text-muted">08/21</small>
+                </div>
+                <img src="src/img/img6.jpg" alt="Bulma - La genio científica de Capsule Corp" class="card-img-top">
+                <div class="card-body p-3">
+                    <div class="d-flex gap-2 mb-3">
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-heart fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-comment fs-5"></i>
+                        </button>
+                        <button class="btn p-1 action-btn">
+                            <i class="far fa-paper-plane fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="fw-semibold mb-2 text-dark">1,156 Likes</div>
+                    <div class="text-dark">La mente más brillante detrás de toda la tecnología. ¡Capsule Corp forever! #Bulma #Ciencia #Tecnología #CapsuleCorp</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- DETALLES DE LA PUBLICACIÓN -->
+
+        <div class="modal fade" id="postModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content border-0 rounded-3">
+                    <!-- Cabecera del modal con título y botón de cierre -->
+                    <div class="modal-header border-bottom p-3">
+                        <h5 class="modal-title fw-semibold text-dark">¡El poder de Goku!</h5>
+                        <small class="text-muted">08/26</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <img src="src/img/img1.jpg" alt="Goku - El guerrero Saiyan más poderoso" class="w-100">
+                        <div class="p-3">
+                            <div class="d-flex gap-2 mb-3">
+                                <button class="btn p-1 action-btn">
+                                    <i class="far fa-heart fs-5"></i>
+                                </button>
+                                <button class="btn p-1 action-btn">
+                                    <i class="far fa-comment fs-5"></i>
+                                </button>
+                                <button class="btn p-1 action-btn">
+                                    <i class="far fa-paper-plane fs-5"></i>
+                                </button>
+                            </div>
+                            <div class="fw-semibold mb-2 text-dark">1,247 Likes</div>
+                            <div class="text-dark">Goku entrenando para alcanzar nuevos niveles de poder. ¡Un verdadero guerrero Saiyan! #DragonBall #Goku #Saiyan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NUEVA PUBLICACIÓN -->
+
+        <div class="modal fade" id="createPostModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content border-0 rounded-3">
+              <div class="modal-header border-bottom">
+                <h5 class="modal-title fw-semibold text-dark">Create a new post</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label
+                      for="postCaption"
+                      class="form-label fw-semibold text-dark"
+                      >Caption:</label
+                    >
+                    <textarea
+                      class="form-control border-2"
+                      id="postCaption"
+                      rows="4"
+                      placeholder="Add the caption of your post here"
+                    ></textarea>
+                  </div>
+                  <div class="d-flex gap-3 mb-3">
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="fas fa-camera"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="modal-footer border-top">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary fw-semibold">
+                  Publish
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <!-- SCRIPTS JAVASCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

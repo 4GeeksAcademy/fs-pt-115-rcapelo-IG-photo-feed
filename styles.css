@@ -1,0 +1,28 @@
+/* GRID DE FOTOS PRINCIPAL */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* ELEMENTOS INDIVIDUALES DEL GRID */
+.photo-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* IMÁGENES DENTRO DE CADA ELEMENTO DEL GRID */
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SCROLL EN LIST VIEW */
+
+#listContent {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
