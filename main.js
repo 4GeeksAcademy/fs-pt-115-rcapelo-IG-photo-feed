@@ -42,7 +42,7 @@ document.querySelectorAll('.action-btn').forEach((btn) => {
 
 // Publish button
 document
-  .querySelector('.btn.btn-primary.fw-semibold')
+  .querySelector('.btn.btn-success.fw-semibold')
   .addEventListener('click', function () {
     const caption = document.getElementById('postCaption').value
     if (caption.trim()) {
@@ -57,7 +57,6 @@ document
   })
 
 // DROPDOWN
-
 document.addEventListener('DOMContentLoaded', function () {
   const logoutLink = document.querySelector('.dropdown-item.text-danger')
 
@@ -78,3 +77,81 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 })
+
+// Modal dinámico
+const charactersData = {
+  0: {
+    title: '¡El poder de Goku!',
+    image: 'src/img/img1.jpg',
+    alt: 'Goku - El guerrero Saiyan más poderoso',
+    likes: '1,247',
+    caption:
+      'Goku entrenando para alcanzar nuevos niveles de poder. ¡Un verdadero guerrero Saiyan! #DragonBall #Goku #Saiyan',
+    date: '08/26',
+  },
+  1: {
+    title: 'Gohan en acción',
+    image: 'src/img/img2.jpg',
+    alt: 'Gohan - El hijo prodigio de Goku',
+    likes: '892',
+    caption:
+      'El hijo prodigio demuestra su increíble potencial. ¡El futuro está en buenas manos! #Gohan #Prodigio #DragonBall',
+    date: '08/25',
+  },
+  2: {
+    title: 'El Príncipe Vegeta',
+    image: 'src/img/img3.jpg',
+    alt: 'Vegeta - El príncipe de los Saiyans',
+    likes: '1,845',
+    caption:
+      'El orgullo Saiyan en su máxima expresión. ¡Nadie supera al Príncipe! #Vegeta #PrincipeSaiyan #Orgullo',
+    date: '08/24',
+  },
+  3: {
+    title: 'Trunks del Futuro',
+    image: 'src/img/img4.jpg',
+    alt: 'Trunks - El joven guerrero del futuro',
+    likes: '756',
+    caption:
+      'El guerrero que vino del futuro para salvar el mundo. ¡Esperanza y valentía! #Trunks #Futuro #Esperanza',
+    date: '08/23',
+  },
+  4: {
+    title: 'Milk la Guerrera',
+    image: 'src/img/img5.jpg',
+    alt: 'Milk - La esposa guerrera de Goku',
+    likes: '623',
+    caption:
+      'La mujer más fuerte del universo (¡pregúntenle a Goku!). Madre, esposa y guerrera. #Milk #Familia #Fuerza',
+    date: '08/22',
+  },
+  5: {
+    title: 'Bulma Genius',
+    image: 'src/img/img6.jpg',
+    alt: 'Bulma - La genio científica de Capsule Corp',
+    likes: '1,156',
+    caption:
+      'La mente más brillante detrás de toda la tecnología. ¡Capsule Corp forever! #Bulma #Ciencia #Tecnología #CapsuleCorp',
+    date: '08/21',
+  },
+}
+
+document
+  .getElementById('postModal')
+  .addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget
+    const postNumber = button.getAttribute('data-post')
+    const character = charactersData[postNumber]
+
+    if (character) {
+      this.querySelector('.modal-title').textContent = character.title
+      this.querySelector('.text-muted').textContent = character.date
+      const modalImg = this.querySelector('img')
+      modalImg.src = character.image
+      modalImg.alt = character.alt
+      this.querySelector('.fw-semibold').textContent =
+        character.likes + ' Likes'
+      this.querySelector('.text-dark:last-child').textContent =
+        character.caption
+    }
+  })
